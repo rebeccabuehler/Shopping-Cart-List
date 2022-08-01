@@ -13,7 +13,8 @@ function NavBar({ stockitems }) {
       // use newStock = stock.map to find "name" and decrease number in stock by 1
       // only if instock is >=  do we move item to Cart and update stock
       let newStock = stock.map((item, index) => {
-        if (item.name == name) item.instock--;
+        if (item.name == name && item.instock == 0) alert("Item out of stock");
+        if (item.name == name && item.instock != 0) item.instock--;
         return item;
       });
       setStock(newStock);
